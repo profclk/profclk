@@ -2,7 +2,7 @@
 if(typeof window.page_loaded =='undefined'){
     window.last_click=null;
     window.clicked_interval = null;
-    window.id_product = '356';
+    window.id_product = '381';
 
     window.getActualTime=function(){
 
