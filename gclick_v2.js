@@ -14,7 +14,7 @@ if(typeof window.page_loaded == 'undefined'){
 
     window.of = ofertar;
     window.ch_call = channel.callbacks['subastas'];
-    window.old_ax = jQuery.ajax;
+    window.old_ax = $.ajax;
 
 
 
@@ -33,7 +33,7 @@ if(typeof window.page_loaded == 'undefined'){
     window.Finalizar = function(){
         ofertar = of;
         channel.callbacks['subastas']=ch_call;
-        jQuery.ajax=old_ax;
+        $.ajax=old_ax;
         delete window.a;
         delete window.of;
         delete window.old_ax;
