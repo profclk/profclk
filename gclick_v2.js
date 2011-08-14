@@ -25,7 +25,7 @@ if(typeof window.page_loaded == 'undefined'){
                 alert("FLAG IS ACTIVE");
             }
             else{
-                setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},4000,id);
+                setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},5000,id);
             }
         };
     };
@@ -60,7 +60,7 @@ if(typeof window.page_loaded == 'undefined'){
            }];
 
            window.clicked_interval = setInterval(function(){
-               if(getActualTime() <= 4)window.change_ofertar();
+               if(getActualTime() <= 5)window.change_ofertar();
                if(last_click != null && last_click.finalizada=='1')window.Finalizar();},500);
         }
       }
