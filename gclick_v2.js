@@ -8,7 +8,7 @@ if(typeof window.page_loaded =='undefined'){
 
         var time = parseInt($('.seconds_'+id_product).html());
         if(isNaN(time))
-            return 30;
+            return null;
         else return time;
     };
 
@@ -60,13 +60,13 @@ if(typeof window.page_loaded =='undefined'){
 
       window.clicked_interval = setInterval(function(){
           var time=getActualTime();
-           if(time <= 6){
+           if(time != null && time <= 6){
                window.change_ofertar();
            }else{
               $.ajax=old_ax;
            }
 
-           if (typeof flag != 'undefined' && flag =="up"){
+           if (typeof flag != 'undefined' && flag =="up" && time!=null){
             console.log("Checking Timer: "+ time);
            }else{
                if(last_click != null && last_click.finalizada=='1')
