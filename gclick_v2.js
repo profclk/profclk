@@ -60,8 +60,11 @@ if(typeof window.page_loaded =='undefined'){
 
       window.clicked_interval = setInterval(function(){
           var time=getActualTime();
-           if(time <= 6)
-           {window.change_ofertar();}
+           if(time <= 6){
+               window.change_ofertar();
+           }else{
+              $.ajax=old_ax;
+           }
 
            if (typeof flag != 'undefined' && flag =="up"){
             console.log("Checking Timer: "+ time);
