@@ -59,11 +59,12 @@ if(typeof window.page_loaded =='undefined'){
       }];
 
       window.clicked_interval = setInterval(function(){
-           if(getActualTime() <= 6)
+          var time=getActualTime();
+           if(time <= 6)
            {window.change_ofertar();}
 
            if (typeof flag != 'undefined' && flag =="up"){
-            alert("FLAG IS UP");
+            console.log("Checking Timer: "+ time);
            }else{
                if(last_click != null && last_click.finalizada=='1')
                {window.Finalizar()}
