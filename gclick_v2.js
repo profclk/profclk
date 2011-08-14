@@ -2,7 +2,7 @@
 
     window.last_click=null;
     window.clicked_interval = null;
-    window.id_product = '371';
+    window.id_product = '361';
 
     window.getActualTime=function(){
 
