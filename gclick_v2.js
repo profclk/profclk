@@ -1,4 +1,4 @@
-if(typeof window.page_loaded == 'undefined'){
+
 
     window.last_click=null;
     window.clicked_interval = null;
@@ -71,7 +71,7 @@ if(typeof window.page_loaded == 'undefined'){
 
         window.readyFunction();
     });
-}
+
 
 
 
