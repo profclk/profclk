@@ -30,7 +30,7 @@ if(typeof window.Finalizar == 'undefined'){
                 alert("FLAG IS ACTIVE");
             }
             else{
-                window.clicked_time=setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);},9000,id);
+                window.clicked_time=setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},10000,id);
             }
         };
     };
@@ -67,7 +67,7 @@ if(typeof window.Finalizar == 'undefined'){
 
       window.clicked_interval = setInterval(function(){
           var time=getActualTime();
-           if(time != null && time <= 6){
+           if(time != null && time <= 8){
                window.change_ofertar();
            }else{
               $.ajax=old_ax;
