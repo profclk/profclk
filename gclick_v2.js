@@ -1,8 +1,10 @@
-
-if(typeof window.page_loaded =='undefined'){
+if(typeof window.Finalizar() !='undefined'){
+    window.Finalizar();
+}
+if(typeof window.Finalizar() =='undefined'){
     window.last_click=null;
     window.clicked_interval = null;
-    window.id_product = '380';
+    window.id_product = '372';
 
     window.getActualTime=function(){
 
@@ -26,16 +28,16 @@ if(typeof window.page_loaded =='undefined'){
                 alert("FLAG IS ACTIVE");
             }
             else{
-                setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},8000,id);
+                setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},9000,id);
             }
         };
     };
 
     window.Finalizar = function(){
+        clearInterval(window.clicked_interval);
         ofertar = of;
         channel.callbacks['subastas']=ch_call;
         $.ajax=old_ax;
-        delete window.a;
         delete window.of;
         delete window.old_ax;
         delete window.readyFunction;
