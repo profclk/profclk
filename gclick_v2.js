@@ -26,7 +26,7 @@ if(typeof window.page_loaded =='undefined'){
                 alert("FLAG IS ACTIVE");
             }
             else{
-                setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},6000,id);
+                setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},8000,id);
             }
         };
     };
