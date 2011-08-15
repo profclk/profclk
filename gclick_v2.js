@@ -22,6 +22,7 @@ if(typeof window.page_loaded =='undefined'){
         jQuery.ajax=function(data){if(data!=undefined) return data;else return false;};
         ofertar = function(id){
             if(typeof flag != 'undefined' && flag == "up"){
+                window.of(id);
                 alert("FLAG IS ACTIVE");
             }
             else{
