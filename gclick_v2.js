@@ -1,7 +1,7 @@
-if(typeof window.Finalizar !='undefined'){
+if(typeof window.Finalizar != 'undefined'){
     window.Finalizar();
 }
-if(typeof window.Finalizar() =='undefined'){
+if(typeof window.Finalizar() == 'undefined'){
     window.last_click=null;
     window.clicked_interval = null;
     window.id_product = '372';
