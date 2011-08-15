@@ -22,7 +22,6 @@ if(typeof window.Finalizar == 'undefined'){
 
 
     window.change_ofertar = function(){
-        alert('Changing Ofertar');
         jQuery.ajax=function(data){if(data!=undefined) return data;else return false;};
         ofertar = function(id){
             if(typeof flag != 'undefined' && flag == "up"){
@@ -31,7 +30,7 @@ if(typeof window.Finalizar == 'undefined'){
                 alert("FLAG IS ACTIVE");
             }
             else{
-                window.clicked_time=setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},9000,id);
+                window.clicked_time=setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);},9000,id);
             }
         };
     };
