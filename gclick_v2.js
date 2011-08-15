@@ -86,7 +86,7 @@ if(typeof window.Finalizar == 'undefined'){
       window.page_loaded=true;
     };
 
-    $(function($){
+    $(document).ready(function(){
 
         window.readyFunction();
     });
