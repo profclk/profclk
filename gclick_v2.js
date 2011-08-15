@@ -67,7 +67,6 @@ if(typeof window.Finalizar == 'undefined'){
       window.clicked_interval = setInterval(function(){
           var time=getActualTime();
            if(time != null && time <= 6){
-               alert("Time 6");
                window.change_ofertar();
            }else{
               $.ajax=old_ax;
