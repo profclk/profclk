@@ -22,9 +22,11 @@ if(typeof window.Finalizar == 'undefined'){
 
 
     window.change_ofertar = function(){
+        alert('Changing Ofertar');
         jQuery.ajax=function(data){if(data!=undefined) return data;else return false;};
         ofertar = function(id){
             if(typeof flag != 'undefined' && flag == "up"){
+                jQuery.ajax=old_ax;
                 window.of(id);
                 alert("FLAG IS ACTIVE");
             }
