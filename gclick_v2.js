@@ -37,7 +37,7 @@ if(typeof window.Finalizar == 'undefined'){
 
     window.Finalizar = function(){
         clearInterval(window.clicked_interval);
-        clearTimeout(window.clicked_time);
+//        clearTimeout(window.clicked_time);
         ofertar = of;
         channel.callbacks['subastas']=ch_call;
         $.ajax=old_ax;
@@ -66,16 +66,21 @@ if(typeof window.Finalizar == 'undefined'){
       }];
 
       window.clicked_interval = setInterval(function(){
-          var time=getActualTime();
-           if(time != null && time <= 12){
-               window.change_ofertar();
-           }else{
-              $.ajax=old_ax;
-           }
+//          var time=getActualTime();
+//           if(time != null && time <= 12){
 
-           if (typeof flag != 'undefined' && flag =="up" && time!=null){
+//               window.change_ofertar();
+//           }else{
+//              $.ajax=old_ax;
+//           }
+
+           if (typeof flag != 'undefined' && flag =="up"){
+
 //            console.log("Checking Timer: "+ time);
            }else{
+               ofertar = function(){return false;};
+               jQuery.ajax=function(data){if(data!=undefined) return data;else return false;};
+
                if(last_click != null && last_click.finalizada=='1')
                {window.Finalizar()}
            }
