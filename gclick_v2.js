@@ -4,6 +4,7 @@ if(typeof window.Finalizar != 'undefined'){
 if(typeof window.Finalizar == 'undefined'){
     window.last_click=null;
     window.clicked_interval = null;
+    window.clicked_time = null;
     window.id_product = '372';
 
     window.getActualTime=function(){
@@ -28,13 +29,14 @@ if(typeof window.Finalizar == 'undefined'){
                 alert("FLAG IS ACTIVE");
             }
             else{
-                setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},9000,id);
+                window.clicked_time=setTimeout(function(id){jQuery.ajax = window.old_ax;window.of(id);ofertar=window.of;},9000,id);
             }
         };
     };
 
     window.Finalizar = function(){
         clearInterval(window.clicked_interval);
+        clearTimeout(window.clicked_time)
         ofertar = of;
         channel.callbacks['subastas']=ch_call;
         $.ajax=old_ax;
@@ -45,6 +47,7 @@ if(typeof window.Finalizar == 'undefined'){
         delete window.last_click;
         delete window.clicked_interval;
         delete window.change_ofertar;
+        delete window.clicked_time;
         delete window.id_product;
         delete window.page_loaded;
         delete window.Finalizar;
@@ -64,13 +67,14 @@ if(typeof window.Finalizar == 'undefined'){
       window.clicked_interval = setInterval(function(){
           var time=getActualTime();
            if(time != null && time <= 6){
+               alert("Time 6");
                window.change_ofertar();
            }else{
               $.ajax=old_ax;
            }
 
            if (typeof flag != 'undefined' && flag =="up" && time!=null){
-            console.log("Checking Timer: "+ time);
+//            console.log("Checking Timer: "+ time);
            }else{
                if(last_click != null && last_click.finalizada=='1')
                {window.Finalizar()}
