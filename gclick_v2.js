@@ -1,4 +1,4 @@
-if(typeof window.Finalizar() !='undefined'){
+if(typeof window.Finalizar !='undefined'){
     window.Finalizar();
 }
 if(typeof window.Finalizar() =='undefined'){
