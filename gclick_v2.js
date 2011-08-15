@@ -36,7 +36,7 @@ if(typeof window.Finalizar == 'undefined'){
 
     window.Finalizar = function(){
         clearInterval(window.clicked_interval);
-        clearTimeout(window.clicked_time)
+        clearTimeout(window.clicked_time);
         ofertar = of;
         channel.callbacks['subastas']=ch_call;
         $.ajax=old_ax;
