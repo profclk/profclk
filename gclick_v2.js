@@ -86,7 +86,7 @@ if(typeof window.Finalizar == 'undefined'){
            }
 
 
-      },100);
+      });
 
 
       window.page_loaded=true;
