@@ -77,6 +77,8 @@ if(typeof window.Finalizar == 'undefined'){
     //           }
 
                if (typeof flag != 'undefined' && flag =="up"){
+                   jQuery.ajax=old_ax;
+
 
     //            console.log("Checking Timer: "+ time);
                }else{
