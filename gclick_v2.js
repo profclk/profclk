@@ -5,7 +5,7 @@ if(typeof window.Finalizar == 'undefined'){
     window.last_click=null;
     window.clicked_interval = null;
     window.clicked_time = null;
-    window.id_product = '372';
+    window.id_product = '419';
 
     window.getActualTime=function(){
 
