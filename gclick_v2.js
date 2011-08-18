@@ -37,6 +37,7 @@ if(typeof window.Finalizar == 'undefined'){
 
     window.Finalizar = function(){
         clearInterval(window.clicked_interval);
+        clearTimeout(window.clicked_out);
 //        clearTimeout(window.clicked_time);
         ofertar = of;
         channel.callbacks['subastas']=ch_call;
@@ -47,6 +48,7 @@ if(typeof window.Finalizar == 'undefined'){
         delete window.getActualTime;
         delete window.last_click;
         delete window.clicked_interval;
+        delete window.clicked_out;
         delete window.change_ofertar;
         delete window.clicked_time;
         delete window.id_product;
@@ -64,29 +66,30 @@ if(typeof window.Finalizar == 'undefined'){
 
            window.ch_call[0](data);
       }];
+      window.clicked_out = setTimeout(function(){
+          window.clicked_interval = setInterval(function(){
+    //          var time=getActualTime();
+    //           if(time != null && time <= 12){
 
-      window.clicked_interval = setInterval(function(){
-//          var time=getActualTime();
-//           if(time != null && time <= 12){
+    //               window.change_ofertar();
+    //           }else{
+    //              $.ajax=old_ax;
+    //           }
 
-//               window.change_ofertar();
-//           }else{
-//              $.ajax=old_ax;
-//           }
+               if (typeof flag != 'undefined' && flag =="up"){
 
-           if (typeof flag != 'undefined' && flag =="up"){
+    //            console.log("Checking Timer: "+ time);
+               }else{
+                   ofertar = function(){return false;};
+                   jQuery.ajax=function(data){if(data!=undefined) return data;else return false;};
 
-//            console.log("Checking Timer: "+ time);
-           }else{
-               ofertar = function(){return false;};
-               jQuery.ajax=function(data){if(data!=undefined) return data;else return false;};
-
-               if(last_click != null && last_click.finalizada=='1')
-               {window.Finalizar()}
-           }
+                   if(last_click != null && last_click.finalizada=='1')
+                   {window.Finalizar()}
+               }
 
 
-      });
+          });
+      },500);
 
 
       window.page_loaded=true;
