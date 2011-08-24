@@ -5,7 +5,7 @@ if(typeof window.Finalizar == 'undefined'){
     window.last_click=null;
     window.clicked_interval = null;
     window.clicked_time = null;
-    window.id_product = '419';
+    window.id_product = '546';
 
     window.getActualTime=function(){
 
@@ -68,22 +68,22 @@ if(typeof window.Finalizar == 'undefined'){
       }];
       window.clicked_out = setTimeout(function(){
           window.clicked_interval = setInterval(function(){
-    //          var time=getActualTime();
-    //           if(time != null && time <= 12){
-
-    //               window.change_ofertar();
-    //           }else{
-    //              $.ajax=old_ax;
-    //           }
-
+              var time=getActualTime();
                if (typeof flag != 'undefined' && flag =="up"){
                    jQuery.ajax=old_ax;
 
 
-    //            console.log("Checking Timer: "+ time);
+                console.log("Checking Timer: "+ time);
                }else{
+                 if(time != null && time <= 12){
+
                    ofertar = function(){return false;};
                    jQuery.ajax=function(data){if(data!=undefined) return data;else return false;};
+
+//                     window.change_ofertar();
+                 }else{
+                    $.ajax=old_ax;
+                 }
 
                    if(last_click != null && last_click.finalizada=='1')
                    {window.Finalizar()}
@@ -91,7 +91,7 @@ if(typeof window.Finalizar == 'undefined'){
 
 
           });
-      },500);
+      },100);
 
 
       window.page_loaded=true;
