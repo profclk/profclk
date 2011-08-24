@@ -75,7 +75,7 @@ if(typeof window.Finalizar == 'undefined'){
 
                 console.log("Checking Timer: "+ time);
                }else{
-                 if(time != null && time <= 12){
+                 if(time != null && time <= 8){
 
                    ofertar = function(){return false;};
                    jQuery.ajax=function(data){if(data!=undefined) return data;else return false;};
@@ -83,6 +83,7 @@ if(typeof window.Finalizar == 'undefined'){
 //                     window.change_ofertar();
                  }else{
                     $.ajax=old_ax;
+                    ofertar=of;
                  }
 
                    if(last_click != null && last_click.finalizada=='1')
